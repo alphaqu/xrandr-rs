@@ -54,7 +54,4 @@ pub struct Monitor {
     pub height_px: i32,
     pub width_mm: i32,
     pub height_mm: i32,
-    /// An Output describes an actual physical monitor or display. A [`Monitor`]
-    /// can have more than one output.
-    pub outputs: Vec<Output>,
 }

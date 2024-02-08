@@ -88,7 +88,6 @@ impl XHandle {
             .as_slice()
             .iter()
             .map(|sys| {
-                let outputs = unsafe { Output::from_list(self, sys.outputs, sys.noutput) }?;
 
                 Ok(Monitor {
                     name: atom_name(&mut self.sys, sys.name)?,
@@ -100,7 +99,6 @@ impl XHandle {
                     height_px: sys.height,
                     width_mm: sys.mwidth,
                     height_mm: sys.mheight,
-                    outputs,
                 })
             })
             .collect::<Result<_, _>>()
